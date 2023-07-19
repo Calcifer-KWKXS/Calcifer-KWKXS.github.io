@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="前言搭建过程我主要参考这个博客做的（很详细，不过这个博客可能有点老了），在此主要记录我建站后进行的主题个性优化，以及遇到的一些问题及其解决办法。">
 <meta property="og:type" content="article">
@@ -27,8 +27,9 @@
 <meta property="og:description" content="前言搭建过程我主要参考这个博客做的（很详细，不过这个博客可能有点老了），在此主要记录我建站后进行的主题个性优化，以及遇到的一些问题及其解决办法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/%E4%B8%8B%E8%BD%BDNexT-V8.17.1.png">
+<meta property="og:image" content="http://example.com/image-1.png">
 <meta property="article:published_time" content="2023-07-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-18T14:05:39.058Z">
+<meta property="article:modified_time" content="2023-07-19T02:28:38.932Z">
 <meta property="article:author" content="卡旺卡先生">
 <meta property="article:tag" content="建站">
 <meta name="twitter:card" content="summary">
@@ -51,7 +52,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="waline-server-pearl.vercel.app">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -117,12 +118,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">NexT 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">4.1.1.</span> <span class="nav-text">NexT 主题的发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-Next-%E6%9C%80%E6%96%B0%EF%BC%88V8-17-1%EF%BC%89-%E7%89%88%E6%9C%AC"><span class="nav-number">4.1.2.</span> <span class="nav-text">升级 Next 最新（V8.17.1） 版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">升级前的准备</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-NexT"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">下载 NexT</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text">计划实现的功能</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">NexT 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">4.1.1.</span> <span class="nav-text">NexT 主题的发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-Next-%E5%88%B0%E6%9C%80%E6%96%B0%EF%BC%88V8-17-1%EF%BC%89%E7%89%88%E6%9C%AC"><span class="nav-number">4.1.2.</span> <span class="nav-text">升级 Next 到最新（V8.17.1）版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">升级前的准备</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-NexT"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">下载 NexT</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text">计划实现的功能</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="卡旺卡先生"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">卡旺卡先生</p>
   <div class="site-description" itemprop="description">未来的路还长，我会挺直胸膛</div>
 </div>
@@ -171,7 +174,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/13/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="卡旺卡先生">
     </span>
 
@@ -204,7 +207,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-18 22:05:39" itemprop="dateModified" datetime="2023-07-18T22:05:39+08:00">2023-07-18</time>
+      <time title="修改时间：2023-07-19 10:28:38" itemprop="dateModified" datetime="2023-07-19T10:28:38+08:00">2023-07-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -217,13 +220,34 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2023/07/13/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2023/07/13/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -262,9 +286,10 @@
 </ol>
 <p>我发现到目前为止，还有很多人选择从旧仓库下载只有 v5 版本的主题，无视仓库停止维护的公告，依旧在旧仓库中发起很多早已解决的 issues，真是令人哭笑不得。所以为了避免一些不必要的麻烦，在这里我还是要提醒各位读者，请从新仓库下载最新版本的主题，以防主题版本太旧，从而与 Hexo 版本或是环境之间发生冲突。</p>
 </blockquote>
-<p>在我按着教程搭建好并进行了一些配置之后，我才得知NexT主题共有三个仓库，并且我安装的不是最新的。</p>
-<h4 id="升级-Next-最新（V8-17-1）-版本"><a href="#升级-Next-最新（V8-17-1）-版本" class="headerlink" title="升级 Next 最新（V8.17.1） 版本"></a>升级 Next 最新（V8.17.1） 版本</h4><p>思考后打算暂时先不管这件事情，我现在也能正常使用，就也不想太折腾，还是先写博客要紧。</p>
-<p>意外遇见升级方式，那就升级一下吧：</p>
+<p>在我按着教程搭建好并进行了一些配置之后，我才得知NexT主题共有三个仓库，而我是从第二个仓库下载的v7。</p>
+<h4 id="升级-Next-到最新（V8-17-1）版本"><a href="#升级-Next-到最新（V8-17-1）版本" class="headerlink" title="升级 Next 到最新（V8.17.1）版本"></a>升级 Next 到最新（V8.17.1）版本</h4><p>思考了我搭博客的目的，认为我目前不应该将精力放在如何装饰上，只要够用就行，决定等以后遇到问题或是有需求再折腾。</p>
+<hr>
+<p>意外遇见升级方式，且弄评论系统时看到“Hexo 似乎在 Next 主题 8.x 的版本使用 waline 比较稳定”，那就升级一下吧：</p>
 <p>官方教程：<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/getting-started/upgrade.html">https://theme-next.js.org/docs/getting-started/upgrade.html</a></p>
 <h5 id="升级前的准备"><a href="#升级前的准备" class="headerlink" title="升级前的准备"></a>升级前的准备</h5><p>因为我博客刚搭建好没多久，也没配置什么东西，故我直接将原 next 文件夹更名为 next-v7，然后直接重下V8版本的。</p>
 <h5 id="下载-NexT"><a href="#下载-NexT" class="headerlink" title="下载 NexT"></a>下载 NexT</h5><p>打开博客根目录Blog文件夹，右键Git Bash，输入如下代码将next主题下载到目录Blog&#x2F;themes：</p>
@@ -273,10 +298,13 @@
 <p>执行命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo server(如果不想本地预览就跳过此句)</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-<p>更新完可能会有延迟（我本地预览时没问题，刚执行完<code>hexo d</code>后页面页面一片空白，摁F12后发现控制台有报错：<code>Velocity is not defined</code>，弄半天没解决以为失败了，记录失败过程去截图时一刷新，网页正常显示了）</p>
-<h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>暂定尝试下 Waline</p>
+<p>更新完可能会有延迟（我本地预览时没问题，刚执行完<code>hexo d</code>后页面一片空白，摁F12后发现控制台有报错：<code>Velocity is not defined</code>，弄半天没解决以为失败了，记录失败过程去截图时一刷新，网页正常显示了）</p>
+<h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>参考了很多博主的看法，决定用 Waline</p>
 <p><a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started/">官网配置: 快速上手</a></p>
 <p><a target="_blank" rel="noopener" href="https://guanqr.com/tech/website/introduction-and-basic-setting-of-waline/">Waline 评论系统的介绍与基础配置</a></p>
+<p>官网给的步骤很详细，照着做就行，关于环境变量页的配置我一开始没理解其意思，实际就是新增3个环境变量：<br><img src="/image-1.png" alt=" Vercel环境变量配置"></p>
+<p>后来发现一步骤详细的博客：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiunian_2761/article/details/122621667?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-122621667-blog-97388997.235%5Ev38%5Epc_relevant_sort_base2&spm=1001.2101.3001.4242.1&utm_relevant_index=3">Hexo博客进阶：为 Next 主题添加 Waline 评论系统</a></p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细)</a></p>
 </li>
@@ -344,6 +372,7 @@
 
 
 
+    <div class="comments" id="waline"></div>
 </div>
   </main>
 
@@ -351,7 +380,7 @@
     <div class="footer-inner">
 
   <div class="copyright">
-    &copy; 
+    &copy; Wed Jun 28 2023 08:00:00 GMT+0800 (中国标准时间) – 
     <span itemprop="copyrightYear">2023</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
@@ -372,19 +401,62 @@
     <span title="站点阅读时长">9 分钟</span>
   </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <!-- <span class="post-meta-divider">|</span>  -->
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
 
     </div>
   </footer>
 
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
   <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
@@ -397,7 +469,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -407,10 +479,28 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-server-pearl.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论吖","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2023/07/13/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
 
 </body>
 </html>
